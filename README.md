@@ -32,6 +32,7 @@ sudo npm install -g typescript
 01. Compiling to JavaScript
 02. Variable Type
 03. Objects and Arrays
+04. Explicit Types
 
 
 ### References
