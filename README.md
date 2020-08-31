@@ -33,6 +33,7 @@ sudo npm install -g typescript
 02. Variable Type
 03. Objects and Arrays
 04. Explicit Types
+05. Any (Dynamic) Type
 
 
 ### References
