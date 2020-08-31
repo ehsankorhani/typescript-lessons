@@ -1,0 +1,11 @@
+var model = 'Ranger';
+model = 525;
+model = true;
+model = { name: 'C180' };
+var showroom = [];
+showroom.push('Ford', 525);
+showroom.push(false);
+var myCar;
+myCar.make = 'BMW';
+myCar.model = 525;
+myCar = { make: 'Mazda', model: 3 };
