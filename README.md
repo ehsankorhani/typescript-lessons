@@ -35,7 +35,8 @@ sudo npm install -g typescript
 04. Explicit Types
 05. Any (Dynamic) Type
 06. TypeScript Config
-07. Function type
+07. Function Type
+08. Type Aliases
 
 
 ### References
