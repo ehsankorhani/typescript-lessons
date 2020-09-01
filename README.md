@@ -37,6 +37,7 @@ sudo npm install -g typescript
 06. TypeScript Config
 07. Function Type
 08. Type Aliases
+09. Function Signature
 
 
 ### References
