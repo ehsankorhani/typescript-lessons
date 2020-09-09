@@ -38,6 +38,7 @@ sudo npm install -g typescript
 07. Function Type
 08. Type Aliases
 09. Function Signature
+10. DOM Types
 
 
 ### References
