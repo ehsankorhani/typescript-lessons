@@ -40,7 +40,7 @@ sudo npm install -g typescript
 09. Function Signature
 10. DOM Types
 11. Classes
-
+12. Access Modifiers
 
 ### References
 
