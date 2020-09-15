@@ -41,6 +41,7 @@ sudo npm install -g typescript
 10. DOM Types
 11. Classes
 12. Access Modifiers
+13. Modules
 
 ### References
 
