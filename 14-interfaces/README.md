@@ -50,7 +50,7 @@ const sellCar = (car: ICar) => {
 }
 ```
 
-<!-- <br>
+<br>
 
 ## The difference between ```interface``` and ```type```
 
@@ -59,10 +59,138 @@ Interfaces and Types look alike very much. However,
 * 
 
 <br>
+
+# Interfaces with Classes
+
+In OOP programming the main purpose of using an interface is for classes to implement it and thus become a type of that interface. This is most useful in **polymorphism** and **dependency injection**.
+
+Expanding on the previous example, we can define a class like below:
+
+```ts
+class SUV implements ICar {
+    make: string;
+    model: string;
+    speed: number;
+    start(): void {
+        throw new Error("Method not implemented.");
+    }
+    accelerate(value: number): number {
+        throw new Error("Method not implemented.");
+    }
+}
+```
+
+But this time our class can contain other property and methods:
+
+```ts
+class SUV implements ICar {
+    //...
+    description() {
+        return `${this.make} ${this.model}`;
+    }
+}
+```
+
+<br>
+
+### Multiple interface
+
+It in fact can implement multiple interfaces. Therefore, if we have another interface as the following:
+
+```ts
+interface IDrivable {
+    driver: string;
+    drive(): void;
+}
+```
+
+Our SUV class can implement it:
+
+```ts
+class SUV implements ICar, IDrivable {    
+    make: string;
+    model: string;
+    speed: number;
+    driver: string;
+
+    constructor(make: string, model: string, speed: number, driver: string) {
+        this.make = make;
+        this.model = model;
+        this.speed = speed;
+        this.driver = driver;
+    }
+
+    start(): void {
+        throw new Error("Method not implemented.");
+    }
+    accelerate(value: number): number {
+        throw new Error("Method not implemented.");
+    }
+    description() {
+        return `${this.make} ${this.model}`;
+    }
+    drive(): void {
+        console.log(`${this.driver} is driving a SUV`);
+    }
+}
+```
+
+Now the ```SUV``` class *Is A* ```ICar``` and also *Is A* ```IDrivable```.
+
+<br>
+
+### Dependency injection
+
+We can have different classes which are implementing a same interface:
+
+```ts
+class Boat implements IDrivable {
+    driver: string;
+
+    constructor(driver: string) {
+        this.driver = driver;
+    }
+
+    drive(): void {
+        console.log(`${this.driver} is driving a boat`);
+    }
+}
+```
+
+And instantiating them with their constructors:
+
+```ts
+const myX5 = new SUV('BMW', 'X5', 220, 'John');
+const myBoat = new Boat('Jane');
+```
+
+Now imagine there is method that accepts an ```IDrivable```:
+
+```ts
+const drive = (machine: IDrivable) => {
+    machine.drive();
+}
+```
+
+It executes the ```drive()``` function on this type, and it is guaranteed that the input argument has this implementation.
+
+This input can eb identified at run time and based on some conditions.
+
+```ts
+let rnd = Math.floor(Math.random() * 2) + 1;
+
+if (rnd === 1) drive(myX5);
+if (rnd === 2) drive(myBoat);
+```
+```
+John is driving a SUV
+# Or
+Jane is driving a boat
+```
+
+<br>
 <br>
 
 ### References
 
 * [Interface vs Type alias in TypeScript 2.7](https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c)
-
- -->
