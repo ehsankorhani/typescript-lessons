@@ -54,9 +54,11 @@ const sellCar = (car: ICar) => {
 
 ## The difference between ```interface``` and ```type```
 
-Interfaces and Types look alike very much. However,
-* A class can ```implement``` an interface, but not a type.
-* 
+Interfaces and Types look alike very much. However, There are few subtle differences.
+
+The main point is that:
+> A class can ```implement``` an interface, but not a type.
+
 
 <br>
 
