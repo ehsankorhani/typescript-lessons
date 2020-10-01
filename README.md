@@ -45,6 +45,7 @@ sudo npm install -g typescript
 14. Interfaces
 15. Generics
 16. Enums
+17. Tuples
 
 ### References
 
